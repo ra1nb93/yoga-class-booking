@@ -18,11 +18,8 @@ I chose to develop this application to simplify the process of booking yoga clas
 ## 🛠 **Technologies Used**
 - **Frontend**: React.js, Tailwind CSS  
 - **Backend**: PHP, MySQL, Laravel  
-- **Authentication**: JSON Web Tokens (JWT)  
-- **Hosting & Database**: Firebase / MySQL  
-
+- **Authentication**: JSON Web Tokens (JWT)
+  
 📌 **Goal**: Digitize the class booking process to simplify the work of yoga instructors and enhance the user experience.
 
----
 
-💡 Feel free to customize this README with additional details about your project! 🚀
