@@ -36,7 +36,7 @@ Clone repo:
 ```bash
 git clone https://github.com/ra1nb93/yoga-class-booking.git
 ```
-Enter on the folder Project:
+Navigate to the folder Project:
 ```bash
 cd yoga-class-booking
 ```
