@@ -29,7 +29,7 @@ function Register() {
     if (!validateInputs()) return;
 
     try {
-      const response = await axios.post('http://localhost:8000/api/user/register.php', {
+      const response = await axios.post('https://yoga-class-booking-production.up.railway.app/api/user/register.php', {
         name,
         email,
         password,
