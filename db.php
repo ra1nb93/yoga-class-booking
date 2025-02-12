@@ -2,7 +2,7 @@
 // db.php
 
 $host = 'monorail.proxy.rlwy.net';
-$port = '28114';   // Se serve, altrimenti puoi lasciare 3306 se in dash è riportato diversamente
+$port = '28114';
 $dbname = 'railway';
 $username = 'root';
 $password = 'SWmEOopHFfJeJkrDqRsXGvsPhxFMjIST';
