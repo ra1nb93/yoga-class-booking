@@ -15,7 +15,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/user/login.php',
+        'https://yoga-class-booking-production.up.railway.app/api/user/login.php',
         { email, password },
         { withCredentials: true } // needed to include cookies/credentials
       );
