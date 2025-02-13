@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+ob_start(); // Inizia il buffer di output per evitare problemi con gli header
 
 require '../../db.php';
 
@@ -8,7 +9,7 @@ header("Access-Control-Allow-Origin: https://yoga-class-booking.netlify.app");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Access-Control-Allow-Credentials: true");
-
+header("Content-Type: application/json; charset=UTF-8"); // Imposta il contenuto JSON
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -22,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = isset($data['password']) ? trim($data['password']) : null;
 
     if (!$email || !$password) {
-        echo json_encode(['error' => 'Email and password are required.']);
         http_response_code(400);
+        echo json_encode(['error' => 'Email and password are required.']);
         exit;
     }
 
@@ -33,8 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if (!$user || !password_verify($password, $user['password'])) {
-            echo json_encode(['error' => 'Invalid email or password.']);
             http_response_code(401);
+            echo json_encode(['error' => 'Invalid email or password.']);
             exit;
         }
 
@@ -47,7 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $base64UrlSignature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($signature));
         $jwt = $base64UrlHeader . "." . $base64UrlPayload . "." . $base64UrlSignature;
 
-        // ✅ Ora la risposta include anche `user` con `id` e `name`
+        // ✅ Risposta JSON pulita
+        http_response_code(200);
         echo json_encode([
             'token' => $jwt,
             'user' => [
@@ -55,9 +57,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'name' => $user['name']
             ]
         ]);
-        http_response_code(200);
+        exit;
     } catch (PDOException $e) {
-        echo json_encode(['error' => $e->getMessage()]);
         http_response_code(500);
+        echo json_encode(['error' => $e->getMessage()]);
+        exit;
     }
 }
+
+ob_end_flush(); // Chiude il buffer di output
