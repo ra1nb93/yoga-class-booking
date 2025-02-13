@@ -51,7 +51,7 @@ const CommentList = ({ postId }) => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        'https://yoga-class-booking-production.up.railway.appapi/comments/update_comment.php',
+        'https://yoga-class-booking-production.up.railway.app/api/comments/update_comment.php',
         { comment_id: commentId, content: editContent.trim() },
         {
           headers: {
