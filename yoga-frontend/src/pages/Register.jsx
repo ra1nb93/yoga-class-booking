@@ -76,13 +76,13 @@ function Register() {
         />
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+          className="w-full bg-emerald-500 text-white py-1 px-4 rounded hover:bg-emerald-600"
         >
           Register
         </button>
         <p className="mt-4 text-sm text-center">
           Already have an account?{' '}
-          <a href="/" className="text-blue-500 hover:underline">
+          <a href="/" className="text-emerald-500 hover:underline">
             Login
           </a>
         </p>

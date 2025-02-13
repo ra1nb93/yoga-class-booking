@@ -111,7 +111,7 @@ const handleTogglePostLike = async (postId) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Board</h2>
+      <h2 className="text-2xl font-bold mb-4">Log-in to write a post or a comment on the Board</h2>
 
       {posts.map((post) => (
         <div key={post.id} className="bg-emerald-50 p-4 mb-4 rounded shadow">
