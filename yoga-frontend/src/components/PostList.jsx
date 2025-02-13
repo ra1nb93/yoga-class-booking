@@ -39,7 +39,7 @@ const PostList = ({ refreshTrigger }) => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        'http://localhost:8000/api/posts/update_post.php',
+        'https://yoga-class-booking-production.up.railway.app/api/posts/update_post.php',
         { post_id: postId, content: editContent },
         {
           headers: {

@@ -45,7 +45,7 @@ function Dashboard() {
     const token = localStorage.getItem('token');
     try {
       const response = await axios.get(
-        'http://localhost:8000/api/notification/get_notification.php',
+        'https://yoga-class-booking-production.up.railway.app/api/notification/get_notification.php',
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -92,7 +92,7 @@ function Dashboard() {
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/class/book_class.php',
+        'https://yoga-class-booking-production.up.railway.app/api/class/book_class.php',
         { user_id: userId, class_id: classId },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -127,7 +127,7 @@ function Dashboard() {
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/class/cancel_booking.php',
+        'https://yoga-class-booking-production.up.railway.app/api/class/cancel_booking.php',
         { user_id: userId, class_id: classId },
         {
           headers: { Authorization: `Bearer ${token}` },
