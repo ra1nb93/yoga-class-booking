@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function Login() {
@@ -74,15 +74,16 @@ function Login() {
             required
           />
           <button
+             className="bg-emerald-500 text-white py-1 px-4 rounded hover:bg-emerald-600"
             type="submit"
           >
             Login
           </button>
           <p className="mt-4 text-sm text-center">
             Don’t have an account?{' '}
-            <a href="/register" className="text-emerald-500 hover:underline">
-              Register
-            </a>
+                    <Link to="/" className="hover:underline">
+                        Register
+                    </Link>
           </p>
         </form>
       </div>
