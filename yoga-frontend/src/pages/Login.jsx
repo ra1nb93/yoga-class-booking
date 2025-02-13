@@ -81,7 +81,7 @@ function Login() {
           </button>
           <p className="mt-4 text-sm text-center">
             Don’t have an account?{' '}
-                    <Link to="/" className="hover:underline">
+                    <Link to="/register" className="text-emerald-500 hover:underline">
                         Register
                     </Link>
           </p>
