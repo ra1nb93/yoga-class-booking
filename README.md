@@ -1,4 +1,9 @@
 # **Yoga Class Booking - Web Application**
+
+# **Try it here**
+
+👉 [Open in Netlify] (https://yoga-class-booking.netlify.app)
+
 **A platform for booking yoga classes** 🧘‍♂️
 
 ## 🔗 **Project Repository**
