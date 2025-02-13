@@ -75,7 +75,6 @@ function Login() {
           />
           <button
             type="submit"
-            className="w-full bg-emerald-400 text-white py-2 rounded hover:bg-blue-600"
           >
             Login
           </button>

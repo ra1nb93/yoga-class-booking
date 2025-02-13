@@ -16,7 +16,7 @@ const CommentList = ({ postId }) => {
 
   const fetchComments = () => {
     axios
-      .get(`http://localhost:8000/api/comments/get_comments.php?post_id=${postId}`)
+      .get(`https://yoga-class-booking-production.up.railway.app/api/comments/get_comments.php?post_id=${postId}`)
       .then((res) => setComments(res.data))
       .catch((err) => console.error('Error fetching comments:', err));
   };
@@ -26,7 +26,7 @@ const CommentList = ({ postId }) => {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        'http://localhost:8000/api/comments/add_comment.php',
+        'https://yoga-class-booking-production.up.railway.app/api/comments/add_comment.php',
         { post_id: postId, content: newComment.trim() },
         {
           headers: {
@@ -51,7 +51,7 @@ const CommentList = ({ postId }) => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        'http://localhost:8000/api/comments/update_comment.php',
+        'https://yoga-class-booking-production.up.railway.appapi/comments/update_comment.php',
         { comment_id: commentId, content: editContent.trim() },
         {
           headers: {
@@ -76,7 +76,7 @@ const CommentList = ({ postId }) => {
   const handleDeleteComment = async (commentId) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete('http://localhost:8000/api/comments/delete_comment.php', {
+      await axios.delete('https://yoga-class-booking-production.up.railway.app/api/comments/delete_comment.php', {
         headers: { Authorization: `Bearer ${token}` },
         data: { comment_id: commentId },
       });
@@ -95,7 +95,7 @@ const CommentList = ({ postId }) => {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        'http://localhost:8000/api/comments/toggle_comment_like.php', 
+        'https://yoga-class-booking-production.up.railway.app/api/comments/toggle_comment_like.php', 
         { comment_id: commentId },
         {
           headers: {

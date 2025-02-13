@@ -30,7 +30,7 @@ function Dashboard() {
     const token = localStorage.getItem('token');
     try {
       const response = await axios.get(
-        'http://localhost:8000/api/class/get_classes.php',
+        'https://yoga-class-booking-production.up.railway.app/api/class/get_classes.php',
         {
           headers: { Authorization: `Bearer ${token}` },
         }

@@ -22,7 +22,7 @@ const AddPost = ({ onPostAdded = () => {} }) => {
       }
 
       const response = await axios.post(
-        'http://localhost:8000/api/posts/add_post.php',
+        'https://yoga-class-booking-production.up.railway.app/api/posts/add_post.php',
         { content: content.trim() }, // Send only text, no user_id
         {
           headers: {

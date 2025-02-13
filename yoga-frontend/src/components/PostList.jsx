@@ -13,7 +13,7 @@ const PostList = ({ refreshTrigger }) => {
 
   const fetchPosts = () => {
     axios
-      .get('http://localhost:8000/api/posts/get_posts.php')
+      .get('https://yoga-class-booking-production.up.railway.app/api/posts/get_posts.php')
       .then((response) => {
         console.log('Data received from the server:', response.data);
         setPosts(response.data);
@@ -68,7 +68,7 @@ const PostList = ({ refreshTrigger }) => {
   const handleDelete = async (postId) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete('http://localhost:8000/api/posts/delete_post.php', {
+      await axios.delete('https://yoga-class-booking-production.up.railway.app/api/posts/delete_post.php', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -92,7 +92,7 @@ const handleTogglePostLike = async (postId) => {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        'http://localhost:8000/api/posts/toggle_post_like.php', // changed endpoint
+        'https://yoga-class-booking-production.up.railway.app/api/posts/toggle_post_like.php', // changed endpoint
         { post_id: postId },
         {
           headers: {

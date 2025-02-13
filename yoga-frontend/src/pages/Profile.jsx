@@ -36,7 +36,7 @@ function Profile() {
     }
 
     try {
-      const response = await axios.get(`http://localhost:8000/api/user/get_user.php?user_id=${userId}`);
+      const response = await axios.get(`https://yoga-class-booking-production.up.railway.app/api/user/get_user.php?user_id=${userId}`);
       setUser(response.data);
     } catch (err) {
       console.error('Failed to fetch user data:', err);
@@ -54,7 +54,7 @@ function Profile() {
     }
 
     try {
-      const response = await axios.get(`http://localhost:8000/api/user/get_user_bookings.php?user_id=${userId}`);
+      const response = await axios.get(`https://yoga-class-booking-production.up.railway.app/api/user/get_user_bookings.php?user_id=${userId}`);
       setBookings(response.data);
     } catch (err) {
       console.error('Failed to fetch bookings:', err);
@@ -72,7 +72,7 @@ function Profile() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/user/update_user.php', {
+      const response = await axios.post('https://yoga-class-booking-production.up.railway.app/api/user/update_user.php', {
         user_id: userId,
         name: user.name,
         email: user.email,
